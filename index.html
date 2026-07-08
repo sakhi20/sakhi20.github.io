@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sakhi Patel — machine learning &amp; painting</title>
+<meta name="description" content="Sakhi Patel — MS Computer Science (Data Science) student at NC State University. Machine learning, computer vision, data engineering — and painting.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='18' fill='%23221a12'/%3E%3Ctext x='50' y='68' font-size='52' text-anchor='middle' fill='%23e8b64c' font-family='Georgia,serif' font-style='italic'%3ES%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,300..900,0..100,0..1;1,9..144,300..900,0..100,0..1&family=Newsreader:ital,opsz,wght@0,6..72,300..600;1,6..72,300..600&family=IBM+Plex+Mono:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="topbar">
+  <a class="wordmark" href="index.html" aria-label="Sakhi Patel — home">S<span class="wordmark-dot">.</span>P</a>
+  <nav aria-label="Main">
+    <a href="#work">Work</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+    <a class="nav-art" href="art.html">Paintings&nbsp;→</a>
+  </nav>
+</header>
+
+<main id="main">
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <div class="hero-text">
+    <p class="kicker mono">Raleigh, North Carolina · fig. 01</p>
+    <h1>Sakhi<br><em>Patel</em></h1>
+    <p class="hero-lede">
+      I train models to <span class="ink-u ink-u-blue">see</span> —
+      satellite damage, genomes, live video.<br class="wide-only">
+      Then I go home and <span class="ink-u ink-u-red">paint</span>.
+    </p>
+    <p class="hero-sub">
+      Master’s student in Computer Science (Data Science track) at
+      NC&nbsp;State University. Machine learning, computer vision, and data
+      engineering by training — a painter the whole time.
+    </p>
+    <div class="hero-actions">
+      <a class="btn btn-solid" href="#projects">See the work</a>
+      <a class="btn btn-ghost" href="art.html">The paintings →</a>
+    </div>
+  </div>
+
+  <!-- Standout moment: her own painting, seen through her own kind of model -->
+  <figure class="hero-vision" aria-label="One of Sakhi's watercolor paintings, overlaid with playful computer-vision detection boxes">
+    <div class="vision-frame">
+      <img src="images/art/fireflies.jpg" width="885" height="1280"
+           alt="Watercolor painting of a glowing lantern hanging from a branch over a lavender field scattered with fireflies, against an orange dusk sky."
+           fetchpriority="high">
+      <div class="vision-overlay" aria-hidden="true">
+        <div class="vbox vbox-1"><span class="vlabel">lantern&nbsp;0.97</span></div>
+        <div class="vbox vbox-2"><span class="vlabel">dusk&nbsp;0.91</span></div>
+        <div class="vbox vbox-3"><span class="vlabel">fireflies&nbsp;×23</span></div>
+        <div class="vcorner vcorner-tl"></div><div class="vcorner vcorner-br"></div>
+      </div>
+    </div>
+    <figcaption class="mono">what the model sees&nbsp;/&nbsp;what I see — <a href="art.html">watercolor, from the paintings page</a></figcaption>
+  </figure>
+</section>
+
+<!-- ============ ABOUT ============ -->
+<section class="about" id="about">
+  <div class="rule-head"><span class="mono">§ 01</span><h2>Two instruments, one eye</h2></div>
+  <div class="about-cols">
+    <p>
+      I grew up in Gujarat, India, took a B.Tech in Information &amp;
+      Communication Technology at Pandit Deendayal Energy University
+      (CGPA 9.3/10), and came to Raleigh for a Master of Computer Science
+      at NC State — data science track, expected May 2027.
+    </p>
+    <p>
+      The thread through everything I make is <em>looking carefully</em>.
+      A damage-classification model and a graphite portrait are trained the
+      same way: you stare at the thing until you stop seeing what you
+      expected and start seeing what’s there. One runs on a GPU, the other
+      on a kitchen table — I don’t treat them as separate lives.
+    </p>
+  </div>
+</section>
+
+<!-- ============ EXPERIENCE ============ -->
+<section class="work" id="work">
+  <div class="rule-head"><span class="mono">§ 02</span><h2>Where I’ve worked</h2></div>
+  <ol class="worklist">
+    <li>
+      <div class="work-when mono">May – Aug 2026</div>
+      <div class="work-what">
+        <h3>Data Engineering &amp; Analysis Intern · <span class="org">KIOTI Tractor</span></h3>
+        <p>Full-time summer internship in Wendell, NC — data engineering and analysis for KIOTI’s U.S. operations.</p>
+      </div>
+    </li>
+    <li>
+      <div class="work-when mono">Jun – Jul 2024</div>
+      <div class="work-what">
+        <h3>Data Analyst Intern · <span class="org">Bhavi Technologies</span></h3>
+        <p>Automated SQL-based ETL pipelines across multiple sources — cutting processing time 40% and enabling daily KPI reporting — and built Power BI and Tableau dashboards for campaign performance and ROI.</p>
+      </div>
+    </li>
+    <li>
+      <div class="work-when mono">May – Jul 2024</div>
+      <div class="work-what">
+        <h3>Data Analytics Trainee · <span class="org">Trainity</span></h3>
+        <p>Completed 8+ analytics projects across HR, finance, customer service, and social-media datasets using SQL, Excel, and Power BI — several are in the <a href="#analytics">analytics shelf</a> below.</p>
+      </div>
+    </li>
+  </ol>
+</section>
+
+<!-- ============ PROJECTS ============ -->
+<section class="projects" id="projects">
+  <div class="rule-head"><span class="mono">§ 03</span><h2>Selected projects</h2></div>
+
+  <article class="plate">
+    <div class="plate-metric">
+      <span class="metric-big">F1 0.8136</span>
+      <span class="metric-note mono">one model vs. a 42-model ensemble (F1 0.8112)</span>
+    </div>
+    <div class="plate-body">
+      <h3><a href="https://github.com/sakhi20/Disaster-Damage-Detection">Disaster Damage Detection</a></h3>
+      <p class="plate-tags mono">PyTorch · satellite imagery · xBD benchmark · NC State, Spring 2026</p>
+      <p>
+        A two-phase deep-learning pipeline that reads post-disaster satellite
+        imagery: first localize every building, then classify how badly each
+        one is damaged. The joint model, <strong>JointDamageNet</strong>,
+        beats the xView2 Challenge’s winning 42-model ensemble with a single
+        network, and posts the highest localization F1 (0.8752) of all
+        compared methods.
+      </p>
+      <a class="plate-link mono" href="https://github.com/sakhi20/Disaster-Damage-Detection">github.com/sakhi20/Disaster-Damage-Detection ↗</a>
+    </div>
+  </article>
+
+  <article class="plate">
+    <div class="plate-metric">
+      <span class="metric-big">18.9×</span>
+      <span class="metric-note mono">compression — GZIP manages 3.2× on the same data</span>
+    </div>
+    <div class="plate-body">
+      <h3><a href="https://github.com/sakhi20/GenoCompress-AI">GenoCompress AI</a></h3>
+      <p class="plate-tags mono">TensorFlow/Keras · Conv1D autoencoder · BioPython</p>
+      <p>
+        Genomic datasets are enormous and repetitive — a good target for
+        learned compression. This 1D-convolutional autoencoder compresses DNA
+        sequences 18.9× while preserving 99.6% of GC content, and GPU
+        acceleration brought runtime up 750% over the CPU baseline.
+      </p>
+      <a class="plate-link mono" href="https://github.com/sakhi20/GenoCompress-AI">github.com/sakhi20/GenoCompress-AI ↗</a>
+    </div>
+  </article>
+
+  <article class="plate">
+    <div class="plate-metric">
+      <span class="metric-big">25 fps</span>
+      <span class="metric-note mono">live inference · 87% precision · 0.85 mAP@0.5</span>
+    </div>
+    <div class="plate-body">
+      <h3><a href="https://github.com/sakhi20/AI-Powered-Suspicious-Activity-Detection-System-Using-Computer-Vision">Suspicious Activity Detection</a></h3>
+      <p class="plate-tags mono">YOLOv8 · OpenCV · undergraduate capstone, PDEU 2024</p>
+      <p>
+        Led a three-person team building a real-time surveillance system that
+        detects weapons and masks in live video, with a proximity-based
+        false-positive filter to keep it reliable in crowded scenes. It holds
+        87% precision and 83% recall at a sustained 25 frames per second.
+      </p>
+      <a class="plate-link mono" href="https://github.com/sakhi20/AI-Powered-Suspicious-Activity-Detection-System-Using-Computer-Vision">github.com/sakhi20/AI-Powered-Suspicious-Activity… ↗</a>
+    </div>
+  </article>
+
+  <!-- Analytics shelf -->
+  <div class="analytics" id="analytics">
+    <h3 class="analytics-head">The analytics shelf <span class="mono">— earlier SQL / Excel / Power BI work</span></h3>
+    <ul class="shelf">
+      <li><a href="https://github.com/sakhi20/Instagram-User-Analytics"><strong>Instagram User Analytics</strong><span>MySQL over 50K+ users — loyalty, hashtags, bot detection</span></a></li>
+      <li><a href="https://github.com/sakhi20/ABC-Call-Volume-Trend-Analysis"><strong>Call Volume Trends</strong><span>staffing model cutting projected abandonment 30% → 10%</span></a></li>
+      <li><a href="https://github.com/sakhi20/Hiring-Process-Analytics"><strong>Hiring Process Analytics</strong><span>4,400+ HR records — salary &amp; gender disparity analysis</span></a></li>
+      <li><a href="https://github.com/sakhi20/IMDB-Movie-Analysis"><strong>IMDB Movie Analysis</strong><span>what actually correlates with a film doing well</span></a></li>
+      <li><a href="https://github.com/sakhi20/Bank-Loan-Case-Study"><strong>Bank Loan Case Study</strong><span>default patterns and borrower segmentation</span></a></li>
+      <li><a href="https://github.com/sakhi20/Data-Analytics-Portfolio"><strong>Full portfolio index →</strong><span>all eight Trainity projects, catalogued</span></a></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ SKILLS ============ -->
+<section class="skills" id="skills">
+  <div class="rule-head"><span class="mono">§ 04</span><h2>Toolbox</h2></div>
+  <dl class="kit">
+    <div><dt class="mono">Languages</dt><dd>Python · SQL (MySQL, PostgreSQL) · Java</dd></div>
+    <div><dt class="mono">ML &amp; vision</dt><dd>PyTorch · TensorFlow / Keras · scikit-learn · YOLOv8 · OpenCV</dd></div>
+    <div><dt class="mono">Data</dt><dd>Pandas · NumPy · Power BI · Tableau · Excel</dd></div>
+    <div><dt class="mono">Build &amp; ship</dt><dd>Docker · Flask · Streamlit · Git / GitHub</dd></div>
+    <div><dt class="mono">Off-hours</dt><dd>Acrylic · watercolor · gouache · graphite — <a href="art.html">see the paintings</a></dd></div>
+  </dl>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section class="contact" id="contact">
+  <div class="contact-inner">
+    <p class="kicker mono">§ 05 · correspondence</p>
+    <h2>Say hello.</h2>
+    <p class="contact-lede">Looking for data science and ML internship &amp; co-op opportunities. Or just talk paintings — that works too.</p>
+    <ul class="contact-links">
+      <li><a href="mailto:sakhipatel20@gmail.com"><span class="mono">email</span>sakhipatel20@gmail.com</a></li>
+      <li><a href="https://github.com/sakhi20"><span class="mono">github</span>sakhi20</a></li>
+      <li><a href="https://www.linkedin.com/in/sakhipatel20/"><span class="mono">linkedin</span>in/sakhipatel20</a></li>
+      <li><a href="SakhiPatelResume.pdf"><span class="mono">resume</span>PDF, one page</a></li>
+    </ul>
+  </div>
+</section>
+</main>
+
+<footer class="footer">
+  <p>Sakhi Patel · Raleigh, NC</p>
+  <p><a href="art.html">The paintings →</a></p>
+</footer>
+
+<script src="site.js"></script>
+</body>
+</html>
