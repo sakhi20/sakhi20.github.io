@@ -1,18 +1,19 @@
 /* ============================================================
-   Sakhi Patel — main page. "Field notes" aesthetic:
-   warm paper, ink, and pigments pulled from her actual paintings.
+   Sakhi Patel — main page. "Gallery white":
+   porcelain, black ink, one Klein-blue accent.
+   The paintings and project figures carry all the color.
    ============================================================ */
 
 :root{
-  --paper:#eceee9;
-  --paper-deep:#e1e4dd;
-  --ink:#23262b;
-  --ink-soft:#5a6068;
-  --vermilion:#b3552e;   /* terracotta */
-  --ultramarine:#2e3a59; /* indigo */
-  --ochre:#66738f;       /* slate */
+  --paper:#fbfbf8;
+  --paper-deep:#f2f2ec;
+  --ink:#101010;
+  --ink-soft:#5c5c55;
+  --vermilion:#1b3fab;   /* Klein blue — the one accent */
+  --ultramarine:#1b3fab;
+  --ochre:#6d6d64;       /* neutral gray */
   --lavender:#756a9e;
-  --hairline:#c6cac1;
+  --hairline:#dcdcd4;
   --serif:"Fraunces",Georgia,serif;
   --text:"Newsreader",Georgia,serif;
   --mono:"IBM Plex Mono",ui-monospace,monospace;
@@ -29,8 +30,6 @@ body{
   font-family:var(--text);
   font-size:1.06rem;
   line-height:1.62;
-  /* paper grain */
-  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.28 0 0 0 0 0.30 0 0 0 0 0.34 0 0 0 0.045 0'/%3E%3C/filter%3E%3Crect width='240' height='240' filter='url(%23n)'/%3E%3C/svg%3E");
 }
 
 .mono{font-family:var(--mono);font-size:.78rem;letter-spacing:.04em;text-transform:lowercase}
@@ -84,8 +83,8 @@ a:hover{color:var(--vermilion)}
   font-family:var(--serif);font-size:clamp(1.15rem,2.4vw,1.55rem);
   line-height:1.4;font-weight:400;margin-bottom:1rem;
 }
-.ink-u{box-shadow:inset 0 -0.42em 0 0 rgba(46,58,89,.25)}
-.ink-u-red{box-shadow:inset 0 -0.42em 0 0 rgba(179,85,46,.28)}
+.ink-u{box-shadow:inset 0 -0.42em 0 0 rgba(27,63,171,.16)}
+.ink-u-red{box-shadow:inset 0 -0.42em 0 0 rgba(27,63,171,.32)}
 .hero-sub{max-width:34rem;color:var(--ink-soft);margin-bottom:1.8rem}
 .wide-only{display:none}
 @media(min-width:900px){.wide-only{display:inline}}
@@ -185,8 +184,8 @@ section{max-width:1240px;margin:0 auto;padding:clamp(2.5rem,6vh,4.5rem) clamp(1.
   color:var(--ultramarine);
   font-variation-settings:"SOFT" 30;
 }
-.plate:nth-of-type(2) .metric-big{color:var(--vermilion)}
-.plate:nth-of-type(3) .metric-big{color:var(--ochre)}
+.plate:nth-of-type(2) .metric-big{color:var(--ink)}
+.plate:nth-of-type(3) .metric-big{color:var(--vermilion)}
 .metric-note{color:var(--ink-soft);max-width:16rem}
 .plate-body h3{font-family:var(--serif);font-size:1.45rem;font-weight:600;margin-bottom:.3rem}
 .plate-body h3 a{text-decoration:none}
@@ -254,22 +253,22 @@ section{max-width:1240px;margin:0 auto;padding:clamp(2.5rem,6vh,4.5rem) clamp(1.
 .contact-inner{
   background:var(--ink);color:var(--paper);
   padding:clamp(2rem,5vw,3.5rem);
-  background-image:radial-gradient(ellipse at 85% 15%,rgba(110,140,205,.20),transparent 55%);
+  background-image:radial-gradient(ellipse at 85% 15%,rgba(50,90,220,.30),transparent 55%);
 }
-.contact-inner .kicker{color:#9fb0d4}
+.contact-inner .kicker{color:#93a9e0}
 .contact-inner h2{
   font-family:var(--serif);font-size:clamp(2.2rem,5vw,3.4rem);font-weight:600;
   font-variation-settings:"SOFT" 70,"WONK" 1;margin:.4rem 0 .6rem;
 }
-.contact-lede{color:#c3cad8;max-width:36rem;margin-bottom:1.8rem}
+.contact-lede{color:#c6cbd6;max-width:36rem;margin-bottom:1.8rem}
 .contact-links{list-style:none;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:.8rem}
 .contact-links a{
   display:flex;flex-direction:column;gap:.15rem;text-decoration:none;
   border:1px solid rgba(236,238,233,.25);padding:.9rem 1rem;
 }
-.contact-links a:hover{border-color:#9fb0d4;color:var(--paper);background:rgba(110,140,205,.10)}
-.contact-links .mono{color:#9fb0d4}
-.contact-inner :focus-visible{outline-color:#9fb0d4}
+.contact-links a:hover{border-color:#93a9e0;color:var(--paper);background:rgba(50,90,220,.14)}
+.contact-links .mono{color:#93a9e0}
+.contact-inner :focus-visible{outline-color:#93a9e0}
 
 /* ---------- footer ---------- */
 .footer{
