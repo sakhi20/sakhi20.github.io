@@ -89,17 +89,17 @@
   <div class="rule-head"><span class="mono">§ 02</span><h2>Where I’ve worked</h2></div>
   <ol class="worklist">
     <li>
-      <div class="work-when mono">May – Aug 2026</div>
+      <div class="work-when mono">May 2026 – present</div>
       <div class="work-what">
-        <h3>Data Engineering &amp; Analysis Intern · <span class="org">KIOTI Tractor</span></h3>
-        <p>Full-time summer internship in Wendell, NC — data engineering and analysis for KIOTI’s U.S. operations.</p>
+        <h3>Data Analyst Intern · <span class="org">KIOTI Tractor</span></h3>
+        <p>Consolidating dealer, sales, and territory data into a unified reporting layer with SQL Server stored procedures, and building Power BI dashboards tracking dealer status accuracy, territory alignment, and data completeness for Sales and Revenue Operations stakeholders.</p>
       </div>
     </li>
     <li>
       <div class="work-when mono">Jun – Jul 2024</div>
       <div class="work-what">
         <h3>Data Analyst Intern · <span class="org">Bhavi Technologies</span></h3>
-        <p>Automated SQL-based ETL pipelines across multiple sources — cutting processing time 40% and enabling daily KPI reporting — and built Power BI and Tableau dashboards for campaign performance and ROI.</p>
+        <p>Built an ETL pipeline integrating 5+ operational data sources, cutting processing latency 40% — real-time KPI reporting instead of weekly batches — plus Power BI and Tableau dashboards tracking 15+ KPIs, adopted by three business units within a month.</p>
       </div>
     </li>
     <li>
@@ -123,14 +123,15 @@
     </div>
     <div class="plate-body">
       <h3><a href="https://github.com/sakhi20/Disaster-Damage-Detection">Disaster Damage Detection</a></h3>
-      <p class="plate-tags mono">PyTorch · satellite imagery · xBD benchmark · NC State, Spring 2026</p>
+      <p class="plate-tags mono">PyTorch · DeepLabV3+ · ResNet-50 · xBD benchmark · NC State, Spring 2026</p>
       <p>
         A two-phase deep-learning pipeline that reads post-disaster satellite
         imagery: first localize every building, then classify how badly each
-        one is damaged. The joint model, <strong>JointDamageNet</strong>,
-        beats the xView2 Challenge’s winning 42-model ensemble with a single
-        network, and posts the highest localization F1 (0.8752) of all
-        compared methods.
+        one is damaged. I benchmarked seven geospatial foundation models for
+        localization (the fine-tuned DeepLabV3+ won at Dice 0.877, beating
+        Satlas and DINOv2), then designed <strong>JointDamageNet</strong> —
+        a dual-branch network that beats the xView2 Challenge’s winning
+        42-model ensemble as a single model.
       </p>
       <a class="plate-link mono" href="https://github.com/sakhi20/Disaster-Damage-Detection">github.com/sakhi20/Disaster-Damage-Detection ↗</a>
       <figure class="plate-figure">
@@ -148,12 +149,12 @@
     </div>
     <div class="plate-body">
       <h3><a href="https://github.com/sakhi20/GenoCompress-AI">GenoCompress AI</a></h3>
-      <p class="plate-tags mono">TensorFlow/Keras · Conv1D autoencoder · BioPython</p>
+      <p class="plate-tags mono">TensorFlow · PyTorch · Conv1D autoencoder · NumPy · scikit-learn</p>
       <p>
         Genomic datasets are enormous and repetitive — a good target for
-        learned compression. This 1D-convolutional autoencoder compresses DNA
-        sequences 18.9× while preserving 99.6% of GC content, and GPU
-        acceleration brought runtime up 750% over the CPU baseline.
+        learned compression. This 1D-convolutional autoencoder compresses
+        500K+ DNA sequences 18.9× — six times better than GZIP — with
+        accuracy validated at 92.3% using GATK benchmarking tools.
       </p>
       <a class="plate-link mono" href="https://github.com/sakhi20/GenoCompress-AI">github.com/sakhi20/GenoCompress-AI ↗</a>
       <figure class="plate-figure geno-schematic" aria-label="Schematic of the compression pipeline">
@@ -177,9 +178,9 @@
       <p class="plate-tags mono">YOLOv8 · OpenCV · undergraduate capstone, PDEU 2024</p>
       <p>
         Led a three-person team building a real-time surveillance system that
-        detects weapons and masks in live video, with a proximity-based
-        false-positive filter to keep it reliable in crowded scenes. It holds
-        87% precision and 83% recall at a sustained 25 frames per second.
+        detects weapons and masks in live video, with a proximity-based filter
+        that cut false positives in crowded scenes by 20%. It holds 87%
+        precision and 83% recall at a sustained 25 frames per second.
       </p>
       <a class="plate-link mono" href="https://github.com/sakhi20/AI-Powered-Suspicious-Activity-Detection-System-Using-Computer-Vision">github.com/sakhi20/AI-Powered-Suspicious-Activity… ↗</a>
       <figure class="plate-figure">
@@ -208,10 +209,11 @@
 <section class="skills" id="skills">
   <div class="rule-head"><span class="mono">§ 04</span><h2>Toolbox</h2></div>
   <dl class="kit">
-    <div><dt class="mono">Languages</dt><dd>Python · SQL (MySQL, PostgreSQL) · Java</dd></div>
-    <div><dt class="mono">ML &amp; vision</dt><dd>PyTorch · TensorFlow / Keras · scikit-learn · YOLOv8 · OpenCV</dd></div>
-    <div><dt class="mono">Data</dt><dd>Pandas · NumPy · Power BI · Tableau · Excel</dd></div>
-    <div><dt class="mono">Build &amp; ship</dt><dd>Docker · Flask · Streamlit · Git / GitHub</dd></div>
+    <div><dt class="mono">Languages</dt><dd>Python (Pandas, NumPy, scikit-learn) · SQL (MySQL, PostgreSQL, SQL Server) · R</dd></div>
+    <div><dt class="mono">ML &amp; vision</dt><dd>PyTorch · TensorFlow · XGBoost · OpenCV · YOLOv8 · NLP</dd></div>
+    <div><dt class="mono">Viz &amp; BI</dt><dd>Power BI · Tableau · Matplotlib · Seaborn</dd></div>
+    <div><dt class="mono">Data engineering</dt><dd>ETL pipeline design · data warehouse development · SSMS · SharePoint</dd></div>
+    <div><dt class="mono">Tools</dt><dd>Git / GitHub · Docker · AWS · Linux · Jupyter · VS Code</dd></div>
     <div><dt class="mono">Off-hours</dt><dd>Acrylic · watercolor · graphite — <a href="art.html">see the paintings</a></dd></div>
   </dl>
 </section>
