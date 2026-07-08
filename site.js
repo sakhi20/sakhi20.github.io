@@ -34,3 +34,20 @@
   }, { threshold: 0.4 });
   vio.observe(vision);
 })();
+
+// Lights-off: dim the room before entering the night studio.
+(function () {
+  var reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var overlay = document.getElementById("lightsOff");
+  if (!overlay || reduced) return;
+  document.querySelectorAll('a[href="art.html"]').forEach(function (a) {
+    a.addEventListener("click", function (e) {
+      if (e.metaKey || e.ctrlKey || e.shiftKey || e.button !== 0) return;
+      e.preventDefault();
+      overlay.classList.add("on");
+      setTimeout(function () { window.location.href = a.href; }, 520);
+    });
+  });
+  // restore if user comes back via bfcache with the lights still off
+  window.addEventListener("pageshow", function () { overlay.classList.remove("on"); });
+})();
