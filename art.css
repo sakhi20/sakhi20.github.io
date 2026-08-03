@@ -8,6 +8,7 @@
   --night-2:#161a23;
   --glow:#e8b64c;
   --glow-soft:#c8a04c;
+  --glow-tint:232,182,76; /* default; each painting overrides with its own light */
   --cream:#eceef2;
   --muted:#8d93a5;
   --serif:"Fraunces",Georgia,serif;
@@ -117,7 +118,7 @@ a{color:var(--glow);text-underline-offset:3px}
 /* the pool of light */
 .frame::before{
   content:"";position:absolute;inset:-14%;z-index:-1;pointer-events:none;
-  background:radial-gradient(ellipse at 50% 42%,rgba(232,182,76,.16),rgba(232,182,76,.05) 45%,transparent 70%);
+  background:radial-gradient(ellipse at 50% 42%,rgba(var(--glow-tint),.18),rgba(var(--glow-tint),.06) 45%,transparent 70%);
   opacity:0;transition:opacity 1.1s ease;
 }
 .lit .frame::before{opacity:1}
@@ -144,7 +145,7 @@ a{color:var(--glow);text-underline-offset:3px}
   color:var(--muted);
 }
 .pos-r figcaption{flex-direction:row-reverse}
-.wnum{color:var(--glow-soft);font-size:.9rem}
+.wnum{color:rgb(var(--glow-tint));font-size:.9rem}
 .wtitle{font-family:var(--serif);font-size:1.35rem;font-style:italic;color:var(--cream);font-variation-settings:"SOFT" 80}
 .wmedium{color:var(--muted)}
 
