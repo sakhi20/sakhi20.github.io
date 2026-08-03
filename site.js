@@ -35,19 +35,35 @@
   vio.observe(vision);
 })();
 
-// Lights-off: dim the room before entering the night studio.
+// Metric count-up — the big numbers tick up when they scroll into view.
 (function () {
   var reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  var overlay = document.getElementById("lightsOff");
-  if (!overlay || reduced) return;
-  document.querySelectorAll('a[href="art.html"]').forEach(function (a) {
-    a.addEventListener("click", function (e) {
-      if (e.metaKey || e.ctrlKey || e.shiftKey || e.button !== 0) return;
-      e.preventDefault();
-      overlay.classList.add("on");
-      setTimeout(function () { window.location.href = a.href; }, 520);
+  var metrics = document.querySelectorAll(".metric-big[data-count]");
+  if (!metrics.length) return;
+
+  // Leave the final (correct) value in place if we can't/shouldn't animate.
+  if (reduced || !("IntersectionObserver" in window)) return;
+
+  function run(el) {
+    var to = parseFloat(el.dataset.count);
+    var dec = parseInt(el.dataset.decimals || "0", 10);
+    var pre = el.dataset.prefix || "";
+    var suf = el.dataset.suffix || "";
+    var dur = 1000, t0 = null;
+    function frame(t) {
+      if (t0 === null) t0 = t;
+      var p = Math.min((t - t0) / dur, 1);
+      var eased = 1 - Math.pow(1 - p, 3); // easeOutCubic
+      el.textContent = pre + (to * eased).toFixed(dec) + suf;
+      if (p < 1) requestAnimationFrame(frame);
+    }
+    requestAnimationFrame(frame);
+  }
+
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (e.isIntersecting) { run(e.target); io.unobserve(e.target); }
     });
-  });
-  // restore if user comes back via bfcache with the lights still off
-  window.addEventListener("pageshow", function () { overlay.classList.remove("on"); });
+  }, { threshold: 0.6 });
+  metrics.forEach(function (el) { io.observe(el); });
 })();

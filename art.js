@@ -1,5 +1,5 @@
-// Art page: light-up-on-scroll walls + accessible lightbox.
-// --- walls + lightbox ---
+// Art page: light-up-on-scroll walls + accessible lightbox (with an optional
+// View-Transition morph between the thumbnail and the full image).
 (function () {
   var reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   var walls = Array.prototype.slice.call(document.querySelectorAll(".wall"));
@@ -27,10 +27,15 @@
   var btnPrev = document.getElementById("lbPrev");
   var btnNext = document.getElementById("lbNext");
   var frames = Array.prototype.slice.call(document.querySelectorAll(".frame"));
+  var main = document.getElementById("main");
   var current = -1;
   var lastFocus = null;
 
-  function show(i) {
+  // Morph only where it's safe: supported + motion allowed.
+  var canMorph = !reduced && typeof document.startViewTransition === "function";
+  function nameOf(el, n) { if (el) el.style.viewTransitionName = n; }
+
+  function paint(i) {
     current = (i + frames.length) % frames.length;
     var f = frames[current];
     var img = f.querySelector("img");
@@ -39,34 +44,66 @@
     lbCap.textContent = f.dataset.title + " — " + f.dataset.medium.toLowerCase();
   }
 
-  function open(i) {
-    lastFocus = document.activeElement;
+  function doOpen(i) {
     lb.hidden = false;
     document.body.style.overflow = "hidden";
-    show(i);
-    btnClose.focus();
+    if (main) main.setAttribute("inert", "");   // lock the page behind the dialog
+    paint(i);
+  }
+
+  function open(i) {
+    lastFocus = document.activeElement;
+    if (!canMorph) { doOpen(i); btnClose.focus(); return; }
+    nameOf(frames[i].querySelector("img"), "lb-active");
+    var vt = document.startViewTransition(function () {
+      nameOf(frames[i].querySelector("img"), "");
+      nameOf(lbImg, "lb-active");
+      doOpen(i);
+    });
+    vt.updateCallbackDone.then(function () { btnClose.focus(); });
+    vt.finished.finally(function () { nameOf(lbImg, ""); });
+  }
+
+  function doClose() {
+    lb.hidden = true;
+    document.body.style.overflow = "";
+    if (main) main.removeAttribute("inert");
+    lbImg.src = "";
   }
 
   function close() {
-    lb.hidden = true;
-    document.body.style.overflow = "";
-    lbImg.src = "";
+    if (!canMorph) { doClose(); if (lastFocus) lastFocus.focus(); return; }
+    var target = frames[current] && frames[current].querySelector("img");
+    nameOf(lbImg, "lb-active");
+    var vt = document.startViewTransition(function () {
+      nameOf(lbImg, "");
+      nameOf(target, "lb-active");
+      doClose();
+    });
+    vt.finished.finally(function () { nameOf(target, ""); });
     if (lastFocus) lastFocus.focus();
+  }
+
+  function navigate(delta) {
+    if (!canMorph) { paint(current + delta); return; }
+    nameOf(lbImg, "lb-active");
+    var vt = document.startViewTransition(function () { paint(current + delta); });
+    vt.finished.finally(function () { nameOf(lbImg, ""); });
   }
 
   frames.forEach(function (f, i) {
     f.addEventListener("click", function () { open(i); });
   });
   btnClose.addEventListener("click", close);
-  btnPrev.addEventListener("click", function () { show(current - 1); });
-  btnNext.addEventListener("click", function () { show(current + 1); });
+  btnPrev.addEventListener("click", function () { navigate(-1); });
+  btnNext.addEventListener("click", function () { navigate(1); });
   lb.addEventListener("click", function (e) { if (e.target === lb) close(); });
 
   document.addEventListener("keydown", function (e) {
     if (lb.hidden) return;
     if (e.key === "Escape") close();
-    else if (e.key === "ArrowLeft") show(current - 1);
-    else if (e.key === "ArrowRight") show(current + 1);
+    else if (e.key === "ArrowLeft") navigate(-1);
+    else if (e.key === "ArrowRight") navigate(1);
     else if (e.key === "Tab") {
       // keep focus inside the dialog
       var focusables = [btnClose, btnPrev, btnNext];

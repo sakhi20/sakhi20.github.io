@@ -202,6 +202,9 @@ section{max-width:1240px;margin:0 auto;padding:clamp(2.5rem,6vh,4.5rem) clamp(1.
   box-shadow:5px 5px 0 0 rgba(35,38,43,.10);
 }
 .plate-figure figcaption{margin-top:.55rem;color:var(--ink-soft)}
+.plate-figure img{transition:box-shadow .25s ease,transform .25s ease}
+.plate-figure:hover img{box-shadow:8px 8px 0 0 rgba(27,63,171,.16);transform:translate(-1px,-1px)}
+@media (prefers-reduced-motion:reduce){.plate-figure img{transition:none}.plate-figure:hover img{transform:none}}
 
 .geno-strip{
   display:flex;align-items:center;gap:1rem;flex-wrap:wrap;
@@ -216,13 +219,15 @@ section{max-width:1240px;margin:0 auto;padding:clamp(2.5rem,6vh,4.5rem) clamp(1.
 .geno-arrow{color:var(--vermilion);white-space:nowrap}
 .geno-latent{color:var(--ultramarine);letter-spacing:.35em;font-size:1rem}
 
-/* ---------- lights-off transition to the night studio ---------- */
-.lights-off{
-  position:fixed;inset:0;z-index:98;background:#0e1118;
-  opacity:0;pointer-events:none;transition:opacity .55s ease;
+/* ---------- cross-document view transitions (page flow) ---------- */
+@view-transition{navigation:auto}
+::view-transition-old(root){animation:vt-out .30s ease both}
+::view-transition-new(root){animation:vt-in .42s ease .05s both}
+@keyframes vt-out{to{opacity:0}}
+@keyframes vt-in{from{opacity:0;transform:translateY(10px)}}
+@media (prefers-reduced-motion:reduce){
+  ::view-transition-group(*),::view-transition-old(*),::view-transition-new(*){animation:none !important}
 }
-.lights-off.on{opacity:1;pointer-events:auto}
-@media (prefers-reduced-motion:reduce){.lights-off{transition:none}}
 
 /* ---------- analytics shelf ---------- */
 .analytics{margin-top:3rem;background:var(--paper-deep);border:1px solid var(--hairline);padding:1.8rem clamp(1.2rem,3vw,2.2rem)}
