@@ -164,8 +164,14 @@ section{max-width:1240px;margin:0 auto;padding:clamp(2.5rem,6vh,4.5rem) clamp(1.
   border-top:1px dotted var(--hairline);
   color:var(--ink-soft);
 }
-.coursework .mono{color:var(--vermilion);margin-right:.9rem}
-@media(max-width:640px){.coursework .mono{display:block;margin-bottom:.3rem}}
+.coursework p + p{margin-top:.55rem}
+.coursework .mono{
+  color:var(--vermilion);display:inline-block;
+  min-width:12.5rem;vertical-align:baseline;
+}
+@media(max-width:640px){
+  .coursework .mono{display:block;min-width:0;margin-bottom:.25rem}
+}
 
 /* ---------- experience ---------- */
 .worklist{list-style:none}
